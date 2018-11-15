@@ -1,0 +1,34 @@
+header {
+  display: inline-flex;
+  align-items: center;
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.25); */
+}
+
+#logo {
+  margin: 0 0 1% 1%;
+  width: 15%;
+  height: 10%;
+}
+
+#header-font {
+  margin-left: 15%;
+}
+
+section {
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+}
+
+#frame {
+  height: 50%;
+  width: 45%;
+  position: relative;
+}
+
+#character {
+  margin-top: 8%;
+  position: absolute;
+  height: 45%;
+  width: auto;
+}
