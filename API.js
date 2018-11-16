@@ -39,7 +39,18 @@ window.CharactersClassification = {
       "The_Cloaked_Star",
       "EnforcerOutfit"
     ],
-    outlander: ["Ranger_beetlejess", "Ragnarok_mythic", "Trailblaster_ac"]
+    outlander: ["Ranger_beetlejess", "Ragnarok_mythic", "Trailblaster_ac"],
+    soldierMale: ["Bullet_Storm_Jonesy", "Carbide"],
+    soldierFemale: [
+      "Chromium_Ramirez",
+      "Berserker_headhunter",
+      "Quickdraw_Calamity"
+    ],
+    constructorMale: ["Hazard_the_13th", "Steel_wool_syd"],
+    ninjaMale: ["The_Cloaked_Star", "EnforcerOutfit"],
+    ninjaFemale: ["Sarah_claus", "Energy_Thief_Mari"],
+    outlanderMale: ["Ragnarok_mythic", "Trailblaster_ac"],
+    outlanderFemale: ["Ranger_beetlejess"]
   },
 
   allCharacters: [

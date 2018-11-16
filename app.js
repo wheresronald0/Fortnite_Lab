@@ -16,7 +16,11 @@ const CharacterSelector = props => {
 
   return (
     <div>
-      <select onChange={selectedCharacter}>{characterLoader()}</select>
+      <h3>Select Your Character</h3>
+      <select onChange={selectedCharacter}>
+        <option />
+        {characterLoader()}
+      </select>
     </div>
   );
 };
@@ -39,7 +43,11 @@ const SubClassSelector = props => {
 
   return (
     <div>
-      <select onChange={selectedSubClass}>{subClassLoader()}</select>
+      <h3>Select Your Characters Sub-Class</h3>
+      <select onChange={selectedSubClass}>
+        <option />
+        {subClassLoader()}
+      </select>
     </div>
   );
 };
@@ -62,9 +70,18 @@ const GenderSelector = props => {
 
   return (
     <div>
-      <select onChange={selectedGender}>{genderLoader()}</select>
+      <h3>Select Your Characters Gender</h3>
+      <select onChange={selectedGender}>
+        <option />
+        {genderLoader()}
+      </select>
     </div>
   );
+};
+
+//Display charecter functional component
+const DisplayCharacter = props => {
+  return <img src={`./Assets/${props.character}.png`} />;
 };
 
 //----------------
@@ -75,17 +92,15 @@ class CharacterShowcase extends React.Component {
 
     const characters = window.CharactersClassification.allCharacters;
     const subClasses = window.CharactersClassification.subClasses;
-    // const bySubClass = window.CharactersClassification.bySubClass;
-    // const byGender = window.CharactersClassification.byGender;
     const genders = window.CharactersClassification.genders;
 
     this.state = {
       characters: characters,
-      character: null,
+      character: "Hazard_the_13th",
       subClasses: subClasses,
       subClass: null,
       // bySubClass: bySubClass
-      // byGender: byGender,
+      byGender: null,
       genders: genders,
       gender: null
     };
@@ -96,10 +111,79 @@ class CharacterShowcase extends React.Component {
   };
 
   subClassSelectedHandler = selectedSubClass => {
-    this.setState({ subClass: selectedSubClass });
+    const soldierMale = window.CharactersClassification.bySubClass.soldierMale;
+    const constructorMale =
+      window.CharactersClassification.bySubClass.constructorMale;
+    const ninjaMale = window.CharactersClassification.bySubClass.ninjaMale;
+    const outlanderMale =
+      window.CharactersClassification.bySubClass.outlanderMale;
+    const soldierFemale =
+      window.CharactersClassification.bySubClass.soldierFemale;
+    const constructorFemale = ["No Characters Available"];
+    const ninjaFemale = window.CharactersClassification.bySubClass.ninjaFemale;
+    const outlanderFemale =
+      window.CharactersClassification.bySubClass.outlanderFemale;
+
+    //Male
+    if (this.state.gender === "Male" && selectedSubClass === "Soldier") {
+      this.setState({ subClass: selectedSubClass, characters: soldierMale });
+    } else if (
+      this.state.gender === "Male" &&
+      selectedSubClass === "Constructor"
+    ) {
+      this.setState({
+        subClass: selectedSubClass,
+        characters: constructorMale
+      });
+    } else if (this.state.gender === "Male" && selectedSubClass === "Ninja") {
+      this.setState({
+        subClass: selectedSubClass,
+        characters: ninjaMale
+      });
+    } else if (
+      this.state.gender === "Male" &&
+      selectedSubClass === "Outlander"
+    ) {
+      this.setState({
+        subClass: selectedSubClass,
+        characters: outlanderMale
+      });
+    }
+    //Female
+    if (this.state.gender === "Female" && selectedSubClass === "Soldier") {
+      this.setState({ subClass: selectedSubClass, characters: soldierFemale });
+    } else if (
+      this.state.gender === "Female" &&
+      selectedSubClass === "Constructor"
+    ) {
+      this.setState({
+        subClass: selectedSubClass,
+        characters: constructorFemale
+      });
+    } else if (this.state.gender === "Female" && selectedSubClass === "Ninja") {
+      this.setState({
+        subClass: selectedSubClass,
+        characters: ninjaFemale
+      });
+    } else if (
+      this.state.gender === "Female" &&
+      selectedSubClass === "Outlander"
+    ) {
+      this.setState({
+        subClass: selectedSubClass,
+        characters: outlanderFemale
+      });
+    }
   };
+
   genderSelectedHandler = selectedGender => {
-    this.setState({ gender: selectedGender });
+    const MaleGender = window.CharactersClassification.byGender.male;
+    const FemaleGender = window.CharactersClassification.byGender.female;
+    if (selectedGender === "Male") {
+      this.setState({ gender: selectedGender, characters: MaleGender });
+    } else if (selectedGender === "Female") {
+      this.setState({ gender: selectedGender, characters: FemaleGender });
+    }
   };
 
   render() {
@@ -118,6 +202,7 @@ class CharacterShowcase extends React.Component {
           characters={this.state.characters}
           characterSelectedHandler={this.characterSelectedHandler}
         />
+        <DisplayCharacter character={this.state.character} />
       </div>
     );
   }
