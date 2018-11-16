@@ -1,4 +1,6 @@
-window.Characters = {
+window.CharactersClassification = {
+  genders: ["Male", "Female"],
+
   byGender: {
     male: [
       "Bullet_Storm_Jonesy",
@@ -19,6 +21,8 @@ window.Characters = {
       "Ranger_beetlejess"
     ]
   },
+
+  subClasses: ["Soldier", "Constructor", "Ninja", "Outlander"],
 
   bySubClass: {
     soldier: [
