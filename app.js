@@ -1,42 +1,40 @@
-(function() {
-  "use strict";
-
-  const AllCharecters = props => {
-    //need to map options to select tag
-    //get info from API and pass it thru props
-    console.log(props);
-    return (
-      <div>
-        <select>
-          <option>Char 1</option>
-        </select>
-      </div>
-    );
+//need to map options to select tag
+//get info from API and pass it thru props
+const CharacterSelector = props => {
+  const helper = () => {
+    return props.characters.map(char => {
+      return <option value={char}>{char}</option>;
+    });
   };
 
-  //----------------
-  // React Container
-  class CharacterShowcase extends React.Component {
-    constructor(props) {
-      super(props);
+  return (
+    <div>
+      <select>{helper()}</select>
+    </div>
+  );
+};
 
-      const characters = window.Characters.AllCharacters;
-      console.log(characters);
-      this.state = {
-        characters: characters,
-        character: "Boo Boo"
-      };
-    }
-    render() {
-      console.log(this.state);
-      return (
-        <div>
-          <p>React Component!</p>
-          <AllCharecters charectersList={this.state.characters} />
-        </div>
-      );
-    }
+//----------------
+// React Container
+class CharacterShowcase extends React.Component {
+  constructor(props) {
+    super(props);
+
+    const characters = window.Characters.allCharacters;
+    console.log(characters);
+    this.state = {
+      characters: characters,
+      character: "Boo Boo"
+    };
   }
+  render() {
+    return (
+      <div>
+        <p>React Component!</p>
+        <CharacterSelector characters={this.state.characters} />
+      </div>
+    );
+  }
+}
 
-  ReactDOM.render(<CharacterShowcase />, document.getElementById("react-root"));
-})();
+ReactDOM.render(<CharacterShowcase />, document.getElementById("react-root"));
