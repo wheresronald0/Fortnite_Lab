@@ -1,8 +1,8 @@
 {
-  "name": "Fortnite_Lab",
+  "name": "fortnite_lab",
   "version": "1.0.0",
-  "description": "",
-  "main": "API.js",
+  "description": "React Application ",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,15 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/wheresronald0/Fortnite_Lab.git"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Ron Mason",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/wheresronald0/Fortnite_Lab/issues"
   },
-  "homepage": "https://github.com/wheresronald0/Fortnite_Lab#readme",
-  "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-react-app": "^3.1.2"
-  }
+  "homepage": "https://github.com/wheresronald0/Fortnite_Lab#readme"
 }
