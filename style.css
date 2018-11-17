@@ -1,3 +1,7 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
 header {
   display: inline-flex;
   align-items: center;
@@ -6,29 +10,16 @@ header {
 
 #logo {
   margin: 0 0 1% 1%;
-  width: 15%;
-  height: 10%;
+  width: 12%;
+  height: 7%;
 }
 
 #header-font {
-  margin-left: 15%;
+  margin-left: 22%;
 }
 
 section {
-  margin-top: 2%;
+  margin-top: 0%;
   display: flex;
   justify-content: center;
-}
-
-#frame {
-  height: 50%;
-  width: 45%;
-  position: relative;
-}
-
-#character {
-  margin-top: 8%;
-  position: absolute;
-  height: 45%;
-  width: auto;
 }

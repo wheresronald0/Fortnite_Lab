@@ -79,13 +79,22 @@ const GenderSelector = props => {
   );
 };
 
-//Display charecter functional component
+//Display character functional component
 const DisplayCharacter = props => {
-  return <img src={`./Assets/${props.character}.png`} />;
+  return (
+    <img
+      style={{
+        position: "absolute",
+        margin: "12% 0 0 8%"
+      }}
+      src={`./Assets/${props.character}.png`}
+    />
+  );
 };
 
 //----------------
 // React Container
+
 class CharacterShowcase extends React.Component {
   constructor(props) {
     super(props);
@@ -188,24 +197,37 @@ class CharacterShowcase extends React.Component {
 
   render() {
     return (
-      <div>
-        <p>React Component!</p>
-        <GenderSelector
-          genders={this.state.genders}
-          genderSelectedHandler={this.genderSelectedHandler}
-        />
-        <SubClassSelector
-          subClasses={this.state.subClasses}
-          subClassSelectedHandler={this.subClassSelectedHandler}
-        />
-        <CharacterSelector
-          characters={this.state.characters}
-          characterSelectedHandler={this.characterSelectedHandler}
-        />
-        <DisplayCharacter character={this.state.character} />
-      </div>
+      <section
+        style={{
+          width: "1280px",
+          display: "flex",
+          flexDirection: "row"
+        }}
+      >
+        <div style={{ margin: "10% 8% 0% 0%" }}>
+          <GenderSelector
+            genders={this.state.genders}
+            genderSelectedHandler={this.genderSelectedHandler}
+          />
+          <SubClassSelector
+            subClasses={this.state.subClasses}
+            subClassSelectedHandler={this.subClassSelectedHandler}
+          />
+          <CharacterSelector
+            characters={this.state.characters}
+            characterSelectedHandler={this.characterSelectedHandler}
+          />
+        </div>
+        <div>
+          <DisplayCharacter character={this.state.character} />
+          <img
+            style={{ position: "relative", height: "115%", width: "75%" }}
+            src="./Assets/frame.png"
+          />
+        </div>
+      </section>
     );
   }
 }
-
+// style={{ height: "800px", width: "900px" }}
 ReactDOM.render(<CharacterShowcase />, document.getElementById("react-root"));
