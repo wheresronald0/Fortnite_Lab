@@ -105,7 +105,7 @@ class CharacterShowcase extends React.Component {
 
     this.state = {
       characters: characters,
-      character: "Hazard_the_13th",
+      character: "question",
       subClasses: subClasses,
       subClass: null,
       // bySubClass: bySubClass
