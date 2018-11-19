@@ -85,11 +85,16 @@ const DisplayCharacter = props => {
     <img
       style={{
         position: "absolute",
-        margin: "12% 0 0 8%"
+        margin: "12.6% 0 0 8%"
       }}
       src={`./Assets/${props.character}.png`}
     />
   );
+};
+
+//secription funtional component
+const Description = props => {
+  return <p>{props.description}</p>;
 };
 
 //----------------
@@ -108,15 +113,21 @@ class CharacterShowcase extends React.Component {
       character: "question",
       subClasses: subClasses,
       subClass: null,
-      // bySubClass: bySubClass
       byGender: null,
       genders: genders,
-      gender: null
+      gender: null,
+      description:
+        "Heroes are the main playable characters in Save the World. There are currently four main classes of Heroes, which each have a number of sub classes. While every Hero in Fortnite can build, explore, and hold their own on the battlefield, each sub class has access to a unique set of Abilities and Traits that gives them a unique style of play."
     };
   }
 
   characterSelectedHandler = selectedCharacter => {
-    this.setState({ character: selectedCharacter });
+    const profile = window.CharactersClassification.profile[selectedCharacter];
+
+    this.setState({
+      character: selectedCharacter,
+      description: profile
+    });
   };
 
   subClassSelectedHandler = selectedSubClass => {
@@ -201,10 +212,16 @@ class CharacterShowcase extends React.Component {
         style={{
           width: "1280px",
           display: "flex",
-          flexDirection: "row"
+          flexDirection: "row",
+          justifyContent: "space-evenly"
         }}
       >
-        <div style={{ margin: "10% 8% 0% 0%" }}>
+        <div
+          style={{
+            margin: "5% 8% 0% 0%",
+            width: "8%"
+          }}
+        >
           <GenderSelector
             genders={this.state.genders}
             genderSelectedHandler={this.genderSelectedHandler}
@@ -218,12 +235,20 @@ class CharacterShowcase extends React.Component {
             characterSelectedHandler={this.characterSelectedHandler}
           />
         </div>
-        <div>
+        <div style={{ width: "60%" }}>
           <DisplayCharacter character={this.state.character} />
           <img
-            style={{ position: "relative", height: "115%", width: "75%" }}
+            style={{
+              position: "relative",
+              height: "115%",
+              width: "100%"
+            }}
             src="./Assets/frame.png"
           />
+        </div>
+        <div style={{ width: "10%", margin: "0% 0% 0% 4%" }}>
+          <h3>Description:</h3>
+          <Description description={this.state.description} />
         </div>
       </section>
     );
