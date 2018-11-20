@@ -5,16 +5,18 @@ body {
 header {
   display: inline-flex;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 #logo {
   margin: 0 0 1% 1%;
-  width: 15%;
-  height: 10%;
+  width: 13%;
+  height: 8%;
 }
 
 #header-font {
-  margin-left: 23%;
+  margin-left: 20%;
 }
 
 section {

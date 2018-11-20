@@ -18,6 +18,7 @@ const CharacterSelector = props => {
     <div>
       <h3>Select Your Character</h3>
       <select onChange={selectedCharacter}>
+        <option>Select</option>
         <option />
         {characterLoader()}
       </select>
@@ -45,6 +46,7 @@ const SubClassSelector = props => {
     <div>
       <h3>Select Your Characters Sub-Class</h3>
       <select onChange={selectedSubClass}>
+        <option>Select</option>
         <option />
         {subClassLoader()}
       </select>
@@ -72,6 +74,7 @@ const GenderSelector = props => {
     <div>
       <h3>Select Your Characters Gender</h3>
       <select onChange={selectedGender}>
+        <option>Select</option>
         <option />
         {genderLoader()}
       </select>
