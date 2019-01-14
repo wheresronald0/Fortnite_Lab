@@ -88,7 +88,8 @@ const DisplayCharacter = props => {
     <img
       style={{
         position: "absolute",
-        margin: "12.6% 0 0 8%"
+        height: "420px",
+        margin: "145px 0 0 145px"
       }}
       src={`./Assets/${props.character}.png`}
     />
@@ -243,8 +244,7 @@ class CharacterShowcase extends React.Component {
           <img
             style={{
               position: "relative",
-              height: "115%",
-              width: "100%"
+              height: "45%"
             }}
             src="./Assets/frame.png"
           />

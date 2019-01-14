@@ -37,12 +37,13 @@ The purpose of this lab is to create a simple SPA to practice React, passing sta
 - React
 - jQuery
 - Babel
+- Mock JSON API
 - CSS
 - HTML
 
 ## Contribution Guidelines
 
-if you'd like to contribute to this project, please checkout a branch
+If you'd like to contribute to this project, please checkout a branch
 
 ## Project's main repository
 
